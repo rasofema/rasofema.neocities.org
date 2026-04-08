@@ -4,6 +4,7 @@
 ### macOS ###
 # General
 .DS_Store
+**/.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -52,5 +53,9 @@ Temporary Items
 # Ignore all local history of files
 .history
 .ionide
+
+### Neocities ###
+.git
+.gitignore 
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos
