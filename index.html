@@ -28,7 +28,8 @@
         document.body.innerHTML = '<img src="/thumbnail.png" style="width:100vw;height:100vh;object-fit:cover;">';
       });
     }
-  </script>
+    </script>
+    <base target="_blank" rel="noopener noreferrer">
 </head>
 
 <body>
@@ -39,8 +40,8 @@
       <nav class="nav" aria-label="Primary navigation">
         <div class="link">
           <p>
-            <button type="button" aria-label="Open home window">
-              <img src="/assets/strawberry.png" width="40" alt="Strawberry icon" onclick="showButton(4); showDiv(4);">
+            <button type="button" aria-label="Open home window" onclick="showButton(4); showDiv(4);">
+              <img src="/assets/strawberry.png" width="40" alt="Strawberry icon">
             </button>
           </p>
           <p style="margin-top:-20px;"><span>Raquel</span></p>
@@ -92,7 +93,6 @@
                   </div>
                   <!--Right column-->
                   <div class="rightcolumn">
-                    <p style="margin-bottom:50px;"></p>
                     <img src="assets/construction.png"
                       style="position:relative;float:right;z-index:10;top:-10px;margin-bottom:-30px;" width="120"
                       alt="Under construction sign">
@@ -113,27 +113,55 @@
                           Inspiration:
                         </div>
                         <div>
-                          <a href="https://olliveen.neocities.org/" target="_blank" rel="noopener noreferrer">
+                          <a href="https://olliveen.neocities.org/">
                             <img src="https://olliveen.neocities.org/img/button.gif" alt="Olliveen button">
                           </a>
-                          <a href="https://ginacities.com" target="_blank" rel="noopener noreferrer">
+                          <a href="https://ginacities.com">
                             <img src="https://ginacities.com/assets/banners/GinaCities.gif" alt="GinaCities banner">
                           </a>
-                          <a href="https://phrogee.neocities.org/" target="_blank" rel="noopener noreferrer">
-                            <img src="https://phrogee.neocities.org/myButton/phrogee_02.gif" alt="Phrogee button">
-                          </a>
-                          <a href="https://petrapixel.neocities.org/" target="_blank" rel="noopener noreferrer">
+                          <img src="https://phrogee.neocities.org/myButton/phrogee_02.gif" alt="Phrogee button">
+                          <a href="https://petrapixel.neocities.org/">
                             <img
                               src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif"
                               alt="Petrapixel button">
                           </a>
-                          <a href="https://shinyexe.neocities.org" target="_blank" rel="noopener noreferrer">
+                          <a href="https://shinyexe.neocities.org">
                             <img src="https://shinyexe.neocities.org/sprites/mybutton.gif" alt="Shinyexe button">
                           </a>
                         </div>
+                        <div style="margin-bottom:5px;margin-top:20px;">
+                        </div>
+                        <a href="https://neocities.org"><img src="https://sakuradreams.neocities.org/Images/Button%20Collection/Neocities01.png"></a>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <img src="/assets/fish.png" class="fish-overlay" height="50" alt="Fish decoration" style="bottom: 25px;right: -23px;rotate: 10deg;">
+              <img src="/assets/starfish.png" class="fish-overlay" height="30" alt="Fish decoration" style="bottom: -10px;right: 60px;rotate: 20deg;">
+            </div>
+          </div>
+          <div id="div3" style="display:none;">
+            <div id="drag" class="window">
+              <div id="header4" class="title-bar">
+                <div class="title-bar-text">
+                  <img src="assets/win98/logs.png" height="15" alt="Notepad icon">&nbsp;Logs
+                </div>
+                <div class="title-bar-controls">
+                  <button type="button" aria-label="Minimize"></button>
+                  <button type="button" aria-label="Maximize"></button>
+                  <button type="button" aria-label="Close" onclick="closeButton(3); closeDiv(3);"></button>
+                </div>
+              </div>
+              <div class="window-body">
+                <div class="logs" id="logs">
+                  <script>
+                  fetch('content/logs.md')
+                    .then(response => response.text())
+                    .then(text => {
+                      document.getElementById('logs').innerHTML = marked.parse(text);
+                    });
+                  </script>
                 </div>
               </div>
             </div>
@@ -162,14 +190,15 @@
       <div class="footertext">
         <p>Welcome! :)</p>
       </div>
-      <div class="buttontext" id="button4">
-        <p><img src="/assets/strawberry.png" height="15" alt="Strawberry icon">&nbsp;Raquel</p>
+      <button class="buttontext" type="button" id="button4">
+        <img src="/assets/strawberry.png" height="15" alt="Strawberry icon">&nbsp;Raquel
+      </button>
+      <div class="log-button">
+        <button class="buttontext" type="button" onclick="showButton(3); showDiv(3);">Logs</button>
       </div>
       <div class="clock">
-        <iframe src="https://free.timeanddate.com/clock/iad1wjt6/n136/tluk/fn8/tct/pct/th1/ts1/ta1" frameborder="0"
-          width="78" height="19" allowtransparency="true" title="Live clock"></iframe>
+        <iframe src="https://free.timeanddate.com/clock/iad3pmx7/n136/tluk/fn12/fs12/tcc0c0c0/pct/ftb/bas2/bat6/baccbcbcb/pa4/tt0/tw1/tm1/th1/ta1" frameborder="0" width="229" height="27" allowtransparency="true"></iframe>
       </div>
-    </div>
   </div>
 
   <!-- External scripts at end of body for optimal loading -->
@@ -179,6 +208,8 @@
   <script src="assets/scripts/cursor-trail.js"></script>
   <script src="assets/scripts/soundfx.js"></script>
   <script src="assets/scripts/bubbles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 
 </html>

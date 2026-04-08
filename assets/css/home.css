@@ -132,6 +132,20 @@ body {
   min-width: 900px;
 }
 
+.logs {
+  margin-left: 4px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.logs p:has(+ ul) {
+  margin-bottom: 0;
+}
+
+.logs p + ul {
+  margin-top: 0;
+}
+
 .frame {
   pointer-events: none;
   user-select: none;
@@ -174,7 +188,6 @@ body {
   width: 246px;
   top: 220px;
   right: 30px;
-  text-align: center;
   position: absolute;
   z-index: 3;
 }
@@ -230,10 +243,16 @@ body {
   max-width: 960px;
   width: 100%;
   top: 25px;
-  left: 200px;
+  left: 150px;
   position: relative;
   z-index: 3;
   margin-right: 20px;
+}
+
+.fish-overlay {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
 }
 
 .windowwrapper2 {
@@ -339,7 +358,7 @@ hr {
   background-color: white;
   color: black;
   padding: 30px;
-  height: 430px;
+  max-height: 430px;
   overflow: auto;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -1040,12 +1059,11 @@ input[type=range]::-moz-range-thumb {
 }
 
 .buttontext {
-  margin-left: 5px;
-  padding: 0 7px 0 7px;
-  margin-top: 2px;
-  height: 28px;
+  font-family: rainy;
+  padding: 2px 7px 0 7px;
+  margin: 2px 2px 2px 2px;
+  height: 26px;
   background: rgb(203, 203, 203);
-  box-shadow: inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;
   display: flex;
 }
 
@@ -1062,24 +1080,29 @@ input[type=range]::-moz-range-thumb {
 }
 
 .buttontext img {
-  margin-top: 5px;
+  margin-top: 2px;
   justify-content: center;
 }
 
-.clock {
-  background-image: url(/assets/win98/timebox.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: rgb(203, 203, 203);
+.log-button {
   position: relative;
-  padding-left: 30px;
-  padding-top: 5px;
+  padding-right: 1px;
   height: 29px;
-  top: 1px;
   z-index: 92 !important;
   float: right;
   order: 2;
   margin-left: auto;
+}
+
+.clock {
+  background-color: #cbcbcb;
+  position: relative;
+  padding-right: 1px;
+  height: 29px;
+  top: 1px;
+  z-index: 92 !important;
+  float: right;
+  order: 3;
   margin-right: 1px;
 }
 
